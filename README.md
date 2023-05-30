@@ -9,4 +9,4 @@ Improve your productivity and stay informed with this efficient blog summarizati
 - advanced RTK query API requests that fire on condition,
 - saved history using the local storage,
 - handled form events and catch errors,
-- implement copy to clipboard,
+- implement copy to clipboard.
