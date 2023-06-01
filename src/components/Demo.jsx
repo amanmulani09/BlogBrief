@@ -16,6 +16,8 @@ if(articlesFromLocalStore){
   setAllArticles(articlesFromLocalStore)
 }
 },[])
+const twoRecentArticles = allArticles.slice(0,2);
+console.log(twoRecentArticles)
   const handleSubmit = async (e) => {
     e && e.preventDefault();
     const {data} = await getSummary({
@@ -51,7 +53,8 @@ className='absolute left-0 my-2 ml-3 w-5
 
 <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
   {
-    allArticles.map((item,index)=>{
+
+twoRecentArticles.map((item,index)=>{
        return (<div key={`link-${index}`}
       onClick={()=> setArticle(item)}
       className="link_card"
