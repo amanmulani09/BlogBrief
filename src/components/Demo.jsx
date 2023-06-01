@@ -49,11 +49,43 @@ className='absolute left-0 my-2 ml-3 w-5
 
   {/* Brower URL History  */}
 
-
+<div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+  {
+    allArticles.map((item,index)=>{
+      <div key={`link-${index}`}
+      onClick={()=> setArticle(item)}
+      className="link_card"
+      >
+        <div className="copy_btn">
+          <img src={copy} alt='copyICon' className='w-[40%] h-[40%] object-contain'/>
+        </div>
+        <p className='flex-1 font-satoshi text-blue-700 font-medium text-sm truncate'>{item.url}</p>
+      </div>
+    })
+  }
+</div>
 </div>
 
 {/* display results */}
-
+<div className="my-10 max-w-full flex justify-center items-center">
+  {
+    isFetching ? (
+      <img src={loader} alt='loader' className='w-20 h-20 object-contain'/>
+    ) : error ? (
+      <p className='font-inter font-bold text-black text-center'>
+        Well, that wasn't suppose to happen...
+        <br/>
+        <span className='font-satoshi font-normal text-gray-700'>{error?.data?.error}</span>
+      </p>
+    ) :(
+      article.summary && (
+        <div className='flex flex-col gap-3'>
+          <h2>Article <span className='blue_gradient'>Summary</span></h2>
+          </div>
+      )
+    )
+  }
+</div>
     </section>
   )
 }
