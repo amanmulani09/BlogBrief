@@ -31,7 +31,7 @@ if(articlesFromLocalStore){
     }
   }
   return (
-    <section className='mt-16 w-full max-w-xl'>
+    <section className='mt-4 w-full max-w-xl'>
 <div className="flex flex-col w-full gap-2">
   <form
   className='relative flex justify-center items-center '
@@ -67,7 +67,7 @@ className='absolute left-0 my-2 ml-3 w-5
 </div>
 
 {/* display results */}
-<div className="my-10 max-w-full flex justify-center items-center">
+<div className="my-2 max-w-full flex justify-center items-center">
   {
     isFetching ? (
       <img src={loader} alt='loader' className='w-20 h-20 object-contain'/>
@@ -80,7 +80,10 @@ className='absolute left-0 my-2 ml-3 w-5
     ) :(
       article.summary && (
         <div className='flex flex-col gap-3'>
-          <h2>Article <span className='blue_gradient'>Summary</span></h2>
+          <h2 className='font-satoshi font-bold text-gray-600 text-xl'>Article <span className='blue_gradient'>Summary</span></h2>
+          <div className="summary_box">
+            <p className='font-inter font-medium text-sm text-gray-700'>{article.summary}</p>
+          </div>
           </div>
       )
     )
